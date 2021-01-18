@@ -19,7 +19,7 @@ environment {
         stage('build image s3') {
             steps {
                 script {
-                 docker.build registry + ":$BUILD_NUMBER"   
+                 dockerImage = docker.build registry   
               }
             }
         }
