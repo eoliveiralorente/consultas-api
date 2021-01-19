@@ -16,15 +16,15 @@ environment {
           }
         }
 
-        stage('build image s3') {
+        stage('Docker build') {
             steps {
                 script {
-                 sh docker build -f "Dockerfile" -t "eoliveiralorente/consulta-s3" ."   
+                 sh docker build -f "Dockerfile ."   
               }
             }
         }
         
-        stage('Deploy push imagem') {
+        stage('Docker push') {
             steps {
                 script {
                 docker.withRegistry('https://registry.hub.docker.com',registryCredential ) {
