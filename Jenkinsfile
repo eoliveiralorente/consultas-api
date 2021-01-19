@@ -11,8 +11,7 @@ environment {
         stage('Clonar git') {
           steps {
             script {
-              git([url:'https://github.com/eoliveiralorente/consultas-api.git', branch:'main', credentialsId: 'eoliveiralorente_id'])
-              sh "docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker"
+              git([url:'https://github.com/eoliveiralorente/consultas-api.git', branch:'main', credentialsId: 'eoliveiralorente_id']
             }           
           }
         }
@@ -20,6 +19,7 @@ environment {
         stage('Docker build') {
             steps {
                 script {
+                 sh "docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker"
                  sh "docker build -t eoliveiralorente/consulta-s3 ."   
               }
             }
