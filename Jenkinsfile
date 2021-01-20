@@ -19,7 +19,6 @@ environment {
         stage('Docker build') {
             steps {
                 script {
-                 sh "docker run -v /var/run/docker.sock:/var/run/docker.sock -ti docker"
                  sh "docker build -t eoliveiralorente/consulta-s3 ."   
               }
             }
