@@ -1,6 +1,6 @@
 pipeline {
 environment {
-    registry = "eoliveiralorente/consulta-s3"
+    registry = "eoliveiralorente/site"
     registryCredential = 'dockerhub_id'
     dockerImage = ''
 }
@@ -19,7 +19,7 @@ environment {
         stage('Docker build') {
             steps {
                 script {
-                 sh "docker build "Dockerfile" -t eoliveiralorente/site:1.0.0 ."   
+                 sh "docker build -t eoliveiralorente/site:1.0.0 ."   
               }
             }
         }
