@@ -19,7 +19,7 @@ environment {
         stage('Docker build') {
             steps {
                 script {
-                 sh "docker build -t eoliveiralorente/site:1.0.0 ."   
+                 dockerImage = docker.build registry + ":$BUIL_NUMBER"   
               }
             }
         }
