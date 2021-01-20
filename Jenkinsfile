@@ -19,7 +19,7 @@ environment {
         stage('Docker build') {
             steps {
                 script {
-                 sh "docker build -t eoliveiralorente/consulta-s3 ."   
+                 sh "docker build "Dockerfile" -t eoliveiralorente/site:1.0.0 ."   
               }
             }
         }
